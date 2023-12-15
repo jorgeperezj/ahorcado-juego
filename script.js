@@ -34,7 +34,7 @@ function iniciarJuego() {
     numeroAleatorio()
 
     Array.from(palabraOculta).forEach(letra => {
-        inputs = `<input type='text' class='${letra}' value='' disabled />`
+        inputs = `<input type='text' class='${letra}' name='abc' disabled />`
         letras.innerHTML += inputs
     });
 }
@@ -78,7 +78,7 @@ function validarLetra(letra) {
         mostrarPalabra.innerText = 'La palabra oculta era: ' + palabraOculta
     }
 
-    buscarInputs = document.querySelectorAll('input[type="text"]');
+    buscarInputs = document.querySelectorAll('input[type="text"][name="abc"]');
     inputsVacios = Array.from(buscarInputs).filter(function (input) {
         return input.value === '';
     });
