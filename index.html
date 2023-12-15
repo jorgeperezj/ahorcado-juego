@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Juego Ahorcado</title>
+</head>
+<body>
+    <h1 class="flex-column-center">AHORCADO</h1>
+
+    <section class="flex-column-center">
+        <canvas id="miCanvas"></canvas>
+    </section>
+
+    <section id="palabra">
+        <div id="letras">
+        </div>
+
+        <div id="abecedario" class="ocultar">
+            <button id="A" onclick="bloquear('A')">A</button>
+            <button id="B" onclick="bloquear('B')">B</button>
+            <button id="C" onclick="bloquear('C')">C</button>
+            <button id="D" onclick="bloquear('D')">D</button>
+            <button id="E" onclick="bloquear('E')">E</button>
+            <button id="F" onclick="bloquear('F')">F</button>
+            <button id="G" onclick="bloquear('G')">G</button>
+            <button id="H" onclick="bloquear('H')">H</button>
+            <button id="I" onclick="bloquear('I')">I</button>
+            <button id="J" onclick="bloquear('J')">J</button>
+            <button id="K" onclick="bloquear('K')">K</button>
+            <button id="L" onclick="bloquear('L')">L</button>
+            <button id="M" onclick="bloquear('M')">M</button>
+            <button id="N" onclick="bloquear('N')">N</button>
+            <button id="Ñ" onclick="bloquear('Ñ')">Ñ</button>
+            <button id="O" onclick="bloquear('O')">O</button>
+            <button id="P" onclick="bloquear('P')">P</button>
+            <button id="Q" onclick="bloquear('Q')">Q</button>
+            <button id="R" onclick="bloquear('R')">R</button>
+            <button id="S" onclick="bloquear('S')">S</button>
+            <button id="T" onclick="bloquear('T')">T</button>
+            <button id="U" onclick="bloquear('U')">U</button>
+            <button id="V" onclick="bloquear('V')">V</button>
+            <button id="W" onclick="bloquear('W')">W</button>
+            <button id="X" onclick="bloquear('X')">X</button>
+            <button id="Y" onclick="bloquear('Y')">Y</button>
+            <button id="Z" onclick="bloquear('Z')">Z</button>
+        </div>
+    </section>
+
+    <section id="mensajes" class="ocultar">
+        <span id="resultado"></span>
+        <span id="mostrarPalabra"></span>
+    </section>
+
+    <section id="botones">
+        <button id="iniciar" class="botones">Iniciar</button>
+        <button id="reiniciar" class="botones ocultar">Reiniciar</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
