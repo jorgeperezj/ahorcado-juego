@@ -1,6 +1,8 @@
 let btnIniciar = document.getElementById('iniciar')
 let btnReiniciar = document.getElementById('reiniciar')
+let btnIngresar = document.getElementById('ingresar')
 let imagen = document.getElementById('miCanvas')
+let inputPalabra = document.getElementById('inputPalabra')
 let letras = document.getElementById('letras')
 let abecedario = document.getElementById('abecedario')
 let mensajes = document.getElementById('mensajes')
@@ -17,21 +19,38 @@ const palabrasAleatorias = ["CIELO", "ORDENADOR", "ESTRUCTURA", "ALFABETO", "CAR
 
 btnIniciar.addEventListener('click', iniciarJuego)
 btnReiniciar.addEventListener('click', reiniciar)
+btnIngresar.addEventListener('click', palabraIngresada)
+inputPalabra.addEventListener('input', function() {
+    inputPalabra.value = inputPalabra.value.replace(/[^a-zA-Z]/g, "");
+});
 
-function numeroAleatorio() {
+function palabraAleatoria(palabra) {
+    if(palabra!=''){
+        palabraOculta = palabra
+        return
+    }
+
     const min = 0;
     const max = palabrasAleatorias.length - 1
     const numeroEnteroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
     palabraOculta = palabrasAleatorias[numeroEnteroAleatorio]
 }
 
+function palabraIngresada(){
+    btnReiniciar.style.display = 'block'
+    btnIngresar.style.display = 'none'
+    inputPalabra.style.display = 'flex'
+    inputPalabra.focus()
+}
+
 function iniciarJuego() {
-    letras.style.display = 'flex'
-    abecedario.style.display = 'block'
+    abecedario.style.display = 'flex'
     btnReiniciar.style.display = 'block'
     btnIniciar.style.display = 'none'
+    btnIngresar.style.display = 'none'
+    inputPalabra.style.display = 'none'
 
-    numeroAleatorio()
+    palabraAleatoria(inputPalabra.value.toUpperCase())
 
     Array.from(palabraOculta).forEach(letra => {
         inputs = `<input type='text' class='${letra}' name='abc' disabled />`
@@ -55,7 +74,6 @@ function validar(letra) {
 
     letrasOcultas.forEach((letraXletra) => {
         letraXletra.value = letra
-        // let classEle = letraXletra.classList.value
     })
 
     validarLetra(letra);

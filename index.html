@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,18 +8,24 @@
     <link rel="stylesheet" href="styles.css">
     <title>Juego Ahorcado</title>
 </head>
+
 <body>
     <h1 class="flex-column-center">AHORCADO</h1>
 
-    <section class="flex-column-center">
+    <section id="imagenes" class="flex-column-center">
         <canvas id="miCanvas"></canvas>
     </section>
 
     <section id="palabra">
-        <div id="letras">
-        </div>
+        <div id="letras"></div>
+    </section>
 
-        <div id="abecedario" class="ocultar">
+    <section id="ingresarPalabra">
+        <input type="text" name="palabraIngresada" id="inputPalabra" class="inputIngresar ocultar" placeholder="Escribe aquí sin espacios..." title="Solo se permiten letras de la A a la Z" required>
+    </section>
+
+    <section id="abecedario">
+        <div>
             <button id="A" onclick="bloquear('A')">A</button>
             <button id="B" onclick="bloquear('B')">B</button>
             <button id="C" onclick="bloquear('C')">C</button>
@@ -49,16 +56,18 @@
         </div>
     </section>
 
-    <section id="mensajes" class="ocultar">
-        <span id="resultado"></span>
+    <section id="mensajes">
+        <span id="resultado" style="display: block; font-weight: bold;"></span>
         <span id="mostrarPalabra"></span>
     </section>
 
     <section id="botones">
         <button id="iniciar" class="botones">Iniciar</button>
+        <button id="ingresar" class="botones">Ingresar palabra</button>
         <button id="reiniciar" class="botones ocultar">Reiniciar</button>
     </section>
 
     <script src="script.js"></script>
 </body>
+
 </html>
